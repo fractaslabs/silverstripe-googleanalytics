@@ -1,0 +1,14 @@
+{
+	"name": "jelicanin/silverstripe-googleanalytics",
+	"description": "Fast, configurable & simple Google Analytics module with support for multiple GA ID's",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe", "CMS", "googleanalytics", "google", "analytics"],
+	"authors": [{
+		"name": "Milan Jelicanin",
+		"email": "milan.jelicanin@fractas.com"
+	}],
+	"require":{
+		"silverstripe/framework": "~3"
+	},
+	    "minimum-stability": "dev"
+}

@@ -1,0 +1,12 @@
+---
+name: mygaconfig
+After: googleanalyticsconfig
+---
+GoogleAnalyticsController:
+  enable_display_features: true
+  enable_in_dev: true
+  ga_id: UA-xxxxxxxx-x0
+  ga_extra_ids:
+    newTracker1: UA-xxxxxxxx-x1
+    newTracker2: UA-xxxxxxxx-x2
+    newTracker3: UA-xxxxxxxx-x3

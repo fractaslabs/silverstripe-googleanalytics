@@ -1,0 +1,6 @@
+---
+name: googleanalyticsconfig
+---
+ContentController:
+  extensions:
+    - GoogleAnalyticsController
