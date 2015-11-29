@@ -7,8 +7,11 @@
 		"name": "Milan Jelicanin",
 		"email": "milan.jelicanin@fractas.com"
 	}],
-	"require":{
+	"require": {
 		"silverstripe/framework": "~3"
 	},
-	    "minimum-stability": "dev"
+	"extra": {
+		"installer-name": "googleanalytics"
+	},
+	"minimum-stability": "dev"
 }
