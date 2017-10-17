@@ -2,11 +2,16 @@
 
 class GoogleAnalyticsController extends Extension
 {
-
     private static $ga_id;
 
+    /**
+    * @var bool For details see https://support.google.com/analytics/answer/2444872?hl=en#trackingcode
+    */
     private static $enable_display_features = true;
 
+    /**
+    * @var bool Enable tracking code in dev mode (useful for testing)
+    */
     private static $enable_in_dev = false;
 
     public function GAID()
@@ -26,6 +31,9 @@ class GoogleAnalyticsController extends Extension
         return Config::inst()->get('GoogleAnalyticsController', 'enable_in_dev');
     }
 
+    /**
+    * @return bool Google Analytics is enabled by default if is in "live" mode
+    */
     public function IsEnabled()
     {
         if (Director::isLive()) {
@@ -37,6 +45,9 @@ class GoogleAnalyticsController extends Extension
         return false;
     }
 
+    /**
+    * Generates GA tracking code out of config vars
+    */
     public function MultiTrackersList()
     {
         $list = Config::inst()->get('GoogleAnalyticsController', 'ga_extra_ids');
@@ -56,6 +67,9 @@ class GoogleAnalyticsController extends Extension
         return new ArrayList($extra);
     }
 
+    /**
+    * Includes the GA tracking code in HTML <head> when ContentController initializes
+    */
     public function onAfterInit()
     {
         if ($this->GAID()) {
