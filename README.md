@@ -35,4 +35,4 @@ GoogleAnalyticsController:
 
 
  ## Licence
-  * See [Licence](https://github.com/fractaslabs/silverstripe-google-analytics/blob/3.0/LICENSE)
+  * See [Licence](https://github.com/fractaslabs/silverstripe-google-analytics/blob/master/LICENSE)
