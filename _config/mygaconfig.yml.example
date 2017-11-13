@@ -2,7 +2,7 @@
 name: mygaconfig
 After: googleanalyticsconfig
 ---
-GoogleAnalyticsController:
+Fractas\GoogleAnalytics\GoogleAnalyticsController:
   enable_display_features: true
   enable_in_dev: true
   ga_id: UA-xxxxxxxx-x0

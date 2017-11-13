@@ -1,6 +1,6 @@
 ---
 name: googleanalyticsconfig
 ---
-ContentController:
+SilverStripe\CMS\Controllers\ContentController:
   extensions:
-    - GoogleAnalyticsController
+    - Fractas\GoogleAnalytics\GoogleAnalyticsController

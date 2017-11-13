@@ -1,21 +1,28 @@
 {
-	"name": "fractaslabs/silverstripe-googleanalytics",
-	"description": "Fast, configurable and simple Google Analytics module with support for multiple GA ID's",
-	"type": "silverstripe-module",
-	"homepage": "https://github.com/fractaslabs/silverstripe-googleanalytics",
-	"keywords": ["silverstripe", "CMS", "google analytics", "google", "analytics"],
-	"license": "BSD-3-Clause",
-	"support": {
-    "issues": "https://github.com/fractaslabs/silverstripe-googleanalytics/issues"
-  },
-	"authors": [{
-		"name": "Milan Jelicanin",
-		"email": "milan.jelicanin@fractas.com"
-	}],
-	"require": {
-		"silverstripe/framework": "~3"
-	},
-	"extra": {
-		"installer-name": "googleanalytics"
-	}
+    "name": "fractas/googleanalytics",
+    "description": "Fast, configurable and simple Google Analytics module with support for multiple GA ID's",
+    "type": "silverstripe-vendormodule",
+    "homepage": "https://github.com/fractaslabs/silverstripe-googleanalytics",
+    "keywords": ["silverstripe", "CMS", "google analytics", "google", "analytics"],
+    "license": "BSD-3-Clause",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "support": {
+        "issues": "https://github.com/fractaslabs/silverstripe-googleanalytics/issues"
+    },
+    "authors": [{
+        "name": "Milan Jelicanin",
+        "email": "milan.jelicanin@fractas.com"
+    }],
+    "require": {
+        "silverstripe/framework": "~4"
+    },
+    "extra": {
+        "installer-name": "googleanalytics"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fractas\\GoogleAnalytics\\": "src/"
+        }
+    }
 }
