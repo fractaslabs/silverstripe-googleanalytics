@@ -1,8 +1,3 @@
----
-name: mygaconfig
-After: googleanalyticsconfig
----
-
 # SilverStripe Google Analytics
 
 ## Overview
