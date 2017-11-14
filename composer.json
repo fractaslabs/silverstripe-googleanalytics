@@ -1,5 +1,5 @@
 {
-	"name": "fractaslabs/silverstripe-googleanalytics",
+	"name": "fractas/silverstripe-googleanalytics",
 	"description": "Fast, configurable and simple Google Analytics module with support for multiple GA ID's",
 	"type": "silverstripe-module",
 	"homepage": "https://github.com/fractaslabs/silverstripe-googleanalytics",
