@@ -1,4 +1,8 @@
 # SilverStripe Google Analytics
+[![Latest Stable Version](https://poser.pugx.org/fractas/googleanalytics/v/stable)](https://packagist.org/packages/fractas/googleanalytics)
+[![Latest Unstable Version](https://poser.pugx.org/fractas/googleanalytics/v/unstable)](https://packagist.org/packages/fractas/googleanalytics)
+[![Total Downloads](https://poser.pugx.org/fractas/googleanalytics/downloads)](https://packagist.org/packages/fractas/googleanalytics)
+[![License](https://poser.pugx.org/fractas/googleanalytics/license)](https://packagist.org/packages/fractas/googleanalytics)
 
 ## Overview
 
@@ -22,7 +26,7 @@ Fast, configurable & simple Google Analytics module with support for multiple GA
 
   ```yaml
   Fractas\GoogleAnalytics\GoogleAnalyticsController:
-    enable_display_features: true
+    enable_display_features: true # https://developers.google.com/analytics/devguides/collection/analyticsjs/display-features
     enable_in_dev: false
     ga_id: UA-xxxxxxxx-x0 #main GA ID property
     ga_extra_ids:
