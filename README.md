@@ -12,6 +12,10 @@ Fast, configurable & simple Google Analytics module with support for multiple GA
 
 - SilverStripe Framework 4
 
+## Version info
+The master branch of this module is currently aiming for SilverStripe 4.x compatibility
+- [SilverStripe 3.0+ compatible version](https://github.com/fractaslabs/silverstripe-googleanalytics/tree/3.0)
+
 ## Installation
 
 - Install via Composer
