@@ -24,9 +24,7 @@ The master branch of this module is currently aiming for SilverStripe 4.x compat
   composer require "fractas/googleanalytics" "^2.0"
   ```
 
-- Run dev/build
-
-- Add to your mysite configuration file your Google Analytics ID:
+- Add to your **mysite.yml** configuration file your Google Analytics ID, and enable extra features (if needed):
 
   ```yaml
   Fractas\GoogleAnalytics\GoogleAnalyticsController:
@@ -38,6 +36,8 @@ The master branch of this module is currently aiming for SilverStripe 4.x compat
       newTracker2: UA-xxxxxxxx-x2
       newTracker3: UA-xxxxxxxx-x3
   ```
+  
+- Run flush=all in your browser
 
 ## Bugtracker
 
