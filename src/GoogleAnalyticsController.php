@@ -2,12 +2,12 @@
 
 namespace Fractas\GoogleAnalytics;
 
-use SilverStripe\Core\Config\Config;
 use SilverStripe\Control\Director;
-use SilverStripe\View\ArrayData;
-use SilverStripe\ORM\ArrayList;
-use SilverStripe\View\Requirements;
+use SilverStripe\Core\Config\Config;
 use SilverStripe\Core\Extension;
+use SilverStripe\ORM\ArrayList;
+use SilverStripe\View\ArrayData;
+use SilverStripe\View\Requirements;
 
 class GoogleAnalyticsController extends Extension
 {
@@ -20,6 +20,21 @@ class GoogleAnalyticsController extends Extension
      * @var array Other Google Analytics tracking codes
      */
     private static $ga_extra_ids;
+
+    /**
+     * @var string Google Tag Manager tracking code
+     */
+    private static $gtm_id;
+
+    /**
+     * @var string Google Analytics domain, used for prefetch
+     */
+    private static $ga_domain = 'https://www.google-analytics.com';
+
+    /**
+     * @var string Google Tag Manager domain, used for prefetch
+     */
+    private static $gtm_domain = 'https://www.googletagmanager.com';
 
     /**
      * @var bool For details see https://support.google.com/analytics/answer/2444872?hl=en#trackingcode
@@ -38,6 +53,16 @@ class GoogleAnalyticsController extends Extension
     {
         if ($this->IsEnabled()) {
             return Config::inst()->get(self::class, 'ga_id');
+        }
+    }
+
+    /**
+     * @return string Returns Google Tag Manager ID if module is enabled
+     */
+    public function GTMID()
+    {
+        if ($this->IsEnabled()) {
+            return Config::inst()->get(self::class, 'gtm_id');
         }
     }
 
@@ -78,16 +103,16 @@ class GoogleAnalyticsController extends Extension
     {
         $list = Config::inst()->get(self::class, 'ga_extra_ids');
 
-        if (!is_array($list)) {
+        if (!\is_array($list)) {
             return false;
         }
 
-        $extra = array();
+        $extra = [];
         foreach ($list as $key => $value) {
-            $extra[] = new ArrayData(array(
+            $extra[] = new ArrayData([
                 'Title' => $key,
                 'ID' => $value,
-            ));
+            ]);
         }
 
         return new ArrayList($extra);

@@ -4,3 +4,13 @@ name: googleanalyticsconfig
 SilverStripe\CMS\Controllers\ContentController:
   extensions:
     - Fractas\GoogleAnalytics\GoogleAnalyticsController
+
+---
+After:
+  - requestprocessors
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Control\Director:
+    properties:
+      Middlewares:
+        CustomTagMiddleware: '%$Fractas\GoogleAnalytics\GoogleTagManagerMiddleware'

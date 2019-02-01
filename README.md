@@ -6,7 +6,7 @@
 
 ## Overview
 
-Fast, configurable & simple Google Analytics module with support for multiple GA ID's
+Fast, configurable, simple Google Analytics and Google Tag Manager module with support for multiple GA ID's
 
 ## Requirements
 
@@ -21,7 +21,7 @@ The master branch of this module is currently aiming for SilverStripe 4.x compat
 - Install via Composer
 
   ```
-  composer require "fractas/googleanalytics" "^2.0"
+  composer require "fractas/googleanalytics" "^3.0"
   ```
 
 - Add to your **mysite.yml** configuration file your Google Analytics ID, and enable extra features (if needed):
@@ -30,13 +30,14 @@ The master branch of this module is currently aiming for SilverStripe 4.x compat
   Fractas\GoogleAnalytics\GoogleAnalyticsController:
     enable_display_features: true # https://developers.google.com/analytics/devguides/collection/analyticsjs/display-features
     enable_in_dev: false
-    ga_id: UA-xxxxxxxx-x0 #main GA ID property
+    ga_id: UA-xxxxxxxx-x0 #main Google Analytics ID property
+    gtm_id: GTM-xxxxxxxx #Google Tag Manager ID
     ga_extra_ids:
-      newTracker1: UA-xxxxxxxx-x1 #multiple GA properties
+      newTracker1: UA-xxxxxxxx-x1 #you can add multiple Google Analytics ID properties
       newTracker2: UA-xxxxxxxx-x2
-      newTracker3: UA-xxxxxxxx-x3
+      newTrackerX: UA-xxxxxxxx-xX
   ```
-  
+
 - Run flush=all in your browser
 
 ## Bugtracker
