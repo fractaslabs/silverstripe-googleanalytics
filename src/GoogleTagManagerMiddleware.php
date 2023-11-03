@@ -33,6 +33,11 @@ class GoogleTagManagerMiddleware implements HTTPMiddleware
     private $ga_domain = null;
 
     /**
+     * @var array List of controllers to be excluded
+     */
+    private $excluded_controllers = [];
+
+    /**
      * Process request.
      *
      * @param HTTPRequest $request
@@ -48,7 +53,9 @@ class GoogleTagManagerMiddleware implements HTTPMiddleware
             return $response;
         }
 
-        if ($this->getIsEnabled()) {
+        $this->excluded_controllers = Config::inst()->get(GoogleAnalyticsController::class, 'excluded_controllers');
+
+        if ($this->getIsEnabled() && !$this->getIsExcluded($request)) {
             $this->gtm_id = Config::inst()->get(GoogleAnalyticsController::class, 'gtm_id');
             $this->gtm_domain = Config::inst()->get(GoogleAnalyticsController::class, 'gtm_domain');
             $this->ga_domain = Config::inst()->get(GoogleAnalyticsController::class, 'ga_domain');
@@ -164,6 +171,20 @@ class GoogleTagManagerMiddleware implements HTTPMiddleware
             return true;
         } elseif (Director::isDev() && Config::inst()->get(GoogleAnalyticsController::class, 'enable_in_dev')) {
             return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * @return bool Check if controller should be excluded from including GA codes
+     */
+    public function getIsExcluded(HTTPRequest $request)
+    {
+        $routeParams = $request->routeParams();
+
+        if (array_key_exists('Controller', $routeParams)) {
+            return in_array($routeParams['Controller'], $this->excluded_controllers);
         }
 
         return false;

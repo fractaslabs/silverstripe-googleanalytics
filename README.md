@@ -36,6 +36,9 @@ The master branch of this module is currently aiming for SilverStripe 4.x compat
       newTracker1: UA-xxxxxxxx-x1 #you can add multiple Google Analytics ID properties
       newTracker2: UA-xxxxxxxx-x2
       newTrackerX: UA-xxxxxxxx-xX
+    excluded_controllers:
+      # Controllers that should be excluded from including GA codes.
+      - Wilr\GoogleSitemaps\Control\GoogleSitemapController
   ```
 
 - Run flush=all in your browser
